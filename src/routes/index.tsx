@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import {
   ArrowDown, ArrowUpRight, Mail, FileDown,
   Code2, Database, Sparkles, GraduationCap, Briefcase, Send,
+  Phone,
 } from "lucide-react";
 import "@/styles.css";
 
@@ -569,7 +570,8 @@ function Contact() {
             {[
               { href: "mailto:krishnarang832@gmail.com", icon: Mail, label: "Email" },
               { href: "https://github.com/kri832", icon: Github, label: "GitHub" },
-              { href: "https://www.linkedin.com/", icon: Linkedin, label: "LinkedIn" },
+              { href: " https://www.linkedin.com/in/krish-narang-aa8659255", icon: Linkedin, label: "LinkedIn" },
+              { href: "tel:919876543210", icon: Phone, label: "Phone" },
               { href: resumePDF, icon: FileDown, label: "Resume" },
             ].map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
