@@ -1,10 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { motion, useScroll, useTransform, useSpring, type Variants } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import {
   ArrowDown, ArrowUpRight, Mail, FileDown,
   Code2, Database, Sparkles, GraduationCap, Briefcase, Send,
 } from "lucide-react";
+import "@/styles.css";
 
 const Github = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M12 .5C5.73.5.86 5.37.86 11.64c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.34.76 1.02.76 2.06 0 1.49-.01 2.69-.01 3.05 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.14 5.37 18.27.5 12 .5z"/></svg>
@@ -17,20 +19,6 @@ import wattWiseImage from "@/assets/WattWise - Premium collection of Electronics
 import whiskAWayImage from "@/assets/Whisk-a-way-home.jpg";
 import resumePDF from "@/assets/Krish_Narang_Final_Executive_Resume.pdf";
 import { cn } from "@/lib/utils";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Krish Narang — Developer & Data Science Student" },
-      { name: "description", content: "Cinematic portfolio of Krish Narang — BCA Applied Data Science at MIT ADT, building web apps and data-driven experiences." },
-      { property: "og:title", content: "Krish Narang — Portfolio" },
-      { property: "og:description", content: "BCA Applied Data Science · Web Developer · Builder" },
-      { property: "og:image", content: profileImage },
-      { name: "twitter:image", content: profileImage },
-    ],
-  }),
-  component: Portfolio,
-});
 
 // --- Enhanced Components ---
 
@@ -657,3 +645,9 @@ function Portfolio() {
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <Portfolio />
+  </React.StrictMode>
+);
